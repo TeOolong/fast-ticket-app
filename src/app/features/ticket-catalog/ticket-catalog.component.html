@@ -1,0 +1,13 @@
+<img src="assets/images/catalog-background.png" alt="" style="position: absolute;left: 0;
+top: 0; width: 100%;
+    height: 100%; opacity: 0.4; z-index: -1;" >
+
+<div class="container-background" >
+    <ng-container [ngSwitch]="state">
+        <app-ticket-catalog-main *ngSwitchCase="'catalog'"
+        (detailPrePurchase)="setProtectedArea($event)"></app-ticket-catalog-main>
+        <app-ticket-catalog-detail *ngSwitchCase="'purchase'"  (returnHome)="state = 'catalog'"
+        [protectedArea]="protectedArea" (detailPurchased)="setDismiss()"></app-ticket-catalog-detail>
+        <app-ticket-catalog-purchase *ngSwitchCase="'dismiss'" (returnHome)="state = 'catalog'"></app-ticket-catalog-purchase>
+    </ng-container>
+</div>

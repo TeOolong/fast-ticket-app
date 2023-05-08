@@ -1,0 +1,44 @@
+.card {
+    min-width: 250px;
+    width: auto;
+    display: flex;
+    padding: 40px 15px 0;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    margin: auto;
+  }
+
+  .card-content {
+    padding-top: 10px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  .card-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: #fff3de;
+    padding-bottom: 20px;
+     p {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 20px;
+     }
+  }
+
+
+  .return-container {
+    width: 100%; 
+    text-align: center;
+    margin-top: 15px;
+    h5 {
+        font-size: 14px;
+    }
+    h5:hover {
+        text-decoration: underline;
+    }
+  }

@@ -1,0 +1,22 @@
+<div class="card-container">
+    <div  class="card" *ngFor="let protectedArea of protectedAreas$ | async">
+        <mat-card style="height: 100%;">
+            <img mat-card-image [src]="protectedArea.image" [alt]="protectedArea.name" />
+            <mat-card-header>
+              <mat-card-title style="text-align: center; font-weight: 600;
+              line-height: 20px;">{{ protectedArea.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="card-content">
+              <p style="width: 100%; margin-bottom: 10px;">
+                {{ protectedArea.description.length > 100 ?
+                     (protectedArea.description | slice : 0:100) + '...' :
+                     protectedArea.description}}
+              </p>
+              <div class="button-content">
+                <button (click)="buy(protectedArea)">Comprar</button>
+                <p>{{ protectedArea.price + ' PEN' }}</p>
+              </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

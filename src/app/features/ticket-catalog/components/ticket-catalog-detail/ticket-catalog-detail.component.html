@@ -1,0 +1,33 @@
+<div class="card-container">
+    <div style="max-width: 750px; margin: 40px auto 0px auto;">
+        <mat-card >
+            <mat-card-content>
+                <div class="row" class="card-content-container">
+                    <div style="width: 50%; display: flex;">
+                        <img width="100%" [src]="protectedArea?.image" />
+                    </div>
+                    <div  style="width: 50%" class="card-data-container">
+                        <h1>{{ protectedArea.name }}</h1>
+                        <p>{{ protectedArea.description }}</p>
+                        <div style="display: flex;  width: 100%; justify-content: space-around;">
+                            <div class="quantity buttons_added">
+                                <button class="minus" (click)="changeQuantity('substract')">-</button>
+                                <input [formControl]="quantity" type="number" name="quantity" class="input-text qty text">
+                                <button class="plus" (click)="changeQuantity('add')">+</button>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="import-quantity">{{ 'Importe total: '+ calculateCurrentImport() }}</p>
+                            </div>
+                        </div>
+                        <div class="button-content">
+                            <button (click)="pay()" [disabled]="quantity.value === 0">Pagar</button>
+                          </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="return-container"><h5><b (click)="returnHome.emit()" style="cursor: pointer;">
+        Regresar al inicio
+    </b></h5></div>
+</div>

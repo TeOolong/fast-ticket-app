@@ -1,0 +1,44 @@
+<div class="login-background"></div>
+<div @fadein class="login-overlay">
+    <div class="login-container mat-elevation-z8 " style="position: relative;">
+        <div class="row group-image">
+            <div class="col-6 container-image" style="background-image: url('assets/images/register-image.jpg')"></div>
+            <div class="col-6 container-image" style="background-image: url('assets/images/login-image.jpg')"></div>
+        </div>
+        <div class="row group-form" >
+            <div class="col-6  container-form" [style.left]="loginMode ? currentSwithWidth:'0px'">
+                <div style="margin: auto; " [formGroup]="form">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 style="text-align: center; font-weight: 600;">{{ loginMode ? 'Bienvenido!' : 'Registrate ahora'}}</h1>
+                        </div>
+                    </div>
+                    <div class="row" *ngFor="let item of currentTemplate">
+                        <div class="col-12 mat-input-smaller" >
+                            <mat-form-field appearance="outline" style="width: 100%;">
+                                <mat-label>{{ item.placeholder }}</mat-label>
+                                <input [formControlName]="item.name" matInput [type]="item.type">
+                                <mat-icon *ngIf="item.icon" matPrefix>{{item.icon}}</mat-icon>
+                                <mat-error *ngIf="form.get(item.name)?.hasError('required')">Favor de ingresar su email</mat-error>
+                                <mat-error *ngIf="form.get(item.name)?.hasError('pattern')">Favor de ingresar un valor válido</mat-error>
+                                <mat-error *ngIf="form.get(item.name)?.hasError('key')">Email ya existe</mat-error>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="button-content">
+                        <button [disabled]="form.invalid || form.pending || processing" (click)="authenticationHandler()">{{ loginMode ? "Ingresar" : "Registrarse" }}</button>
+                      </div>
+                    <div class="row">
+                        <div class="col-12" *ngIf="loginMode">
+                            <h5>No tienes una cuenta? <b (click)="changeMode()" style="cursor: pointer;">Registrate</b></h5>
+                        </div>
+                        <div class="col-12" *ngIf="!loginMode">
+                            <h5>Ya tienes una cuenta? <b (click)="changeMode()" style="cursor: pointer;">Ingresa aquí</b></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

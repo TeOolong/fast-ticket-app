@@ -1,0 +1,133 @@
+.card-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: #fff3de;
+    
+  }
+
+  .card-content-container {
+    display: flex;
+  }
+
+  .card-data-container {
+    padding: 20px;
+    h1 {
+        width: 100%;
+        font-weight: 600;
+    }
+    p {
+        width: 100%;
+    }
+  }
+
+  .quantity {
+    display: inline-block; }
+   
+   .quantity .input-text.qty {
+    width: 35px;
+    height: 39px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #efefef;
+   }
+   
+   .quantity.buttons_added {
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top; }
+   
+   .quantity.buttons_added input {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    box-shadow: none;
+   }
+   
+   .quantity.buttons_added .minus,
+   .quantity.buttons_added .plus {
+    padding: 7px 10px 8px;
+    height: 41px;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    cursor:pointer;}
+   
+   .quantity.buttons_added .minus {
+    border-right: 0; }
+   
+   .quantity.buttons_added .plus {
+    border-left: 0; }
+   
+   .quantity.buttons_added .minus:hover,
+   .quantity.buttons_added .plus:hover {
+    background: #eeeeee; }
+   
+   .quantity input::-webkit-outer-spin-button,
+   .quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; }
+    
+    .quantity.buttons_added .minus:focus,
+   .quantity.buttons_added .plus:focus {
+    outline: none; }
+   
+.import-quantity {
+    margin: auto;
+        float: right;
+        margin: auto 0 auto auto;
+        font-size: 18px;
+        font-weight: 600;
+}
+
+.button-content {
+    bottom: 0;
+    margin-top: auto !important;
+    display: flex;
+    width: 100%;
+
+    button {
+        background-color: white;
+        color: black;
+        font-family: "Poppins";
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        border-color: #fab500;
+        padding: 6px 20px;
+        border-style: solid;
+        height: auto;
+        margin: 10px auto auto auto;
+    }
+
+    button:hover {
+        color: white;
+        background-color: #fab500;
+    }
+
+    button:disabled {
+        color: white;
+        background-color: #99968d;
+        border: #99968d;
+    }
+}
+
+.return-container {
+  width: 100%; 
+  text-align: center;
+  margin-top: 15px;
+  h5 {
+      font-size: 14px;
+  }
+  h5:hover {
+      text-decoration: underline;
+  }
+}
+
+  @media only screen and (max-width: 500px) {
+    .card-content-container {
+        display:block;
+      }
+}
